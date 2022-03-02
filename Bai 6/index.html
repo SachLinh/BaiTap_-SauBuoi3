@@ -1,0 +1,47 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			input {
+				padding: 10px;
+				font-size: 15px;
+				margin-bottom: 20px;
+			}
+		</style>
+	</head>
+	<body>
+		<h2>Lấy chữ dài nhất trong chuỗi</h2>
+		<input
+			type="text"
+			name="dauVao"
+			id="Vao"
+			placeholder="Nhập chuỗi đầu vào"
+		/>
+		<br />
+		<input type="button" value="Tìm max" onclick="MaxWord()" />
+		<br />
+		<input type="text" name="dauRa" id="Ra" disabled />
+		<script>
+			function MaxWord() {
+				var text = document.getElementById('Vao').value;
+				text = text.split(' ');
+				var soLuongTu = text.length;
+				var maxWord = 0;
+				var word = '';
+				for (let i = 0; i < soLuongTu; i++) {
+					if (text[i].split('').length > maxWord) {
+						maxWord = text[i].split('').length;
+						word = text[i];
+					}
+				}
+				document.getElementById('Ra').value = word;
+			}
+		</script>
+	</body>
+</html>

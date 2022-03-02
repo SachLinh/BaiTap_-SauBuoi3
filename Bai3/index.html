@@ -1,0 +1,47 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Bai 3</title>
+		<script
+			src="https://code.jquery.com/jquery-3.6.0.js"
+			integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+			crossorigin="anonymous"
+		></script>
+	</head>
+	<body>
+		<h2>Thêm dòng vào cuối bảng</h2>
+		<table id="myTable" border="1">
+			<tr>
+				<td>Row1 cell1</td>
+				<td>Row1 cell2</td>
+			</tr>
+			<tr>
+				<td>Row2 cell1</td>
+				<td>Row2 cell2</td>
+			</tr>
+			<tr>
+				<td>Row3 cell1</td>
+				<td>Row3 cell2</td>
+			</tr>
+		</table>
+		<br />
+		<input type="button" value="ADD New ROW" onclick="AddNewRow()" />
+		<script>
+			function AddNewRow() {
+				var soLuongDong = $('#myTable').find('tr').length;
+				var table = document.getElementById('myTable');
+				var row = table.insertRow(soLuongDong);
+				var cell1 = row.insertCell(0);
+				var cell2 = row.insertCell(1);
+				soLuongDong += 1;
+				cell1.innerHTML = 'New row ' + soLuongDong + ' Cell 1';
+				cell2.innerHTML = 'New row ' + soLuongDong + ' Cell 2';
+			}
+		</script>
+	</body>
+</html>

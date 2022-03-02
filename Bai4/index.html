@@ -1,0 +1,40 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Bai 4</title>
+		<style>
+			input {
+				padding: 10px;
+				font-size: 15px;
+				margin-bottom: 20px;
+			}
+		</style>
+	</head>
+	<body>
+		<h2>Sắp xếp theo chiều a -> z</h2>
+		<input
+			type="text"
+			name="dauVao"
+			id="Vao"
+			placeholder="Nhập chuỗi đầu vào"
+		/>
+		<br />
+		<input type="button" value="Sắp xếp chuỗi a -> z" onclick="SapXep()" />
+		<br />
+		<input type="text" name="dẩu" id="Ra" disabled />
+		<script>
+			function SapXep() {
+				var vao = document.getElementById('Vao').value;
+				var text1 = vao.split('');
+				var text2 = text1.sort();
+				var text3 = text2.join('');
+				document.getElementById('Ra').value = text3;
+			}
+		</script>
+	</body>
+</html>

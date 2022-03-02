@@ -1,0 +1,49 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Bai 5</title>
+		<style>
+			input {
+				padding: 10px;
+				font-size: 15px;
+				margin-bottom: 20px;
+			}
+		</style>
+	</head>
+	<body>
+		<h2>Viết hoa chữ cái đầu mỗi từ</h2>
+		<input
+			type="text"
+			name="dauVao"
+			id="Vao"
+			placeholder="Nhập chuỗi đầu vào"
+		/>
+		<br />
+		<input type="button" value="Sắp xếp chuỗi a -> z" onclick="InHoa()" />
+		<br />
+		<input type="text" name="dauRa" id="Ra" disabled />
+		<script>
+			function InHoa() {
+				var text1 = document.getElementById('Vao').value;
+				text1 = text1.toLowerCase();
+				text1 = text1.split('');
+				var soLuongTu = text1.length;
+				for (let i = 0; i < soLuongTu; i++) {
+					if (i == 0) {
+						text1[i] = text1[i].toUpperCase();
+					}
+					if (text1[i] == ' ') {
+						text1[i + 1] = text1[i + 1].toUpperCase();
+					}
+				}
+				text1 = text1.join('');
+				document.getElementById('Ra').value = text1;
+			}
+		</script>
+	</body>
+</html>
